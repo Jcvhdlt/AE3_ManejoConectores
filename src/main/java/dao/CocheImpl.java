@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CocheImpl implements CocheDAO {
+public class CocheImpl implements dao.CocheDAO {
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;

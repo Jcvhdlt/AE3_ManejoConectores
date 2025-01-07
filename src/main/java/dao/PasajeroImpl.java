@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PasajeroImpl implements PasajerosDAO {
+public class PasajeroImpl implements dao.PasajerosDAO {
     private Connection connection;
     private PreparedStatement preparedStatement;
     private ResultSet resultSet;
