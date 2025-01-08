@@ -48,7 +48,7 @@ public class CocheImpl implements CocheDAO {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                return new Coche(
+                return new Coche( // se busca un coche en la BBDD con el id proporcionado, en caso de encontrarse se crea un nuevo objeto coche con esa info
                         resultSet.getInt("id"),
                         resultSet.getString("modelo"),
                         resultSet.getInt("plazas")

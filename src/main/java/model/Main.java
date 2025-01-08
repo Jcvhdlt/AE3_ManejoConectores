@@ -5,6 +5,7 @@ import dao.CocheImpl;
 import dao.PasajeroImpl;
 import dao.PasajerosDAO;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -65,6 +66,33 @@ public class Main {
                     Coche nuevoCoche = new Coche(0, modelo, plazas);
                     cocheDAO.creaCoche(nuevoCoche);
                     System.out.println("Coche añadido correctamente.");
+                    break;
+                case 2:
+                    System.out.println("Introduzca el id del coche que quiere borrar:");
+                    int idDelete = scanner.nextInt();
+                    cocheDAO.deleteCoche(idDelete);
+                    System.out.println("Coche eliminado correctamente");
+                    break;
+
+                case 3:
+                    System.out.println("Introduzca el ID:");
+                    int id = scanner.nextInt();
+                    System.out.println(cocheDAO.buscarCocheId(id));
+                    break;
+
+                case 4:
+                    System.out.println("Introduce el ID del coche a modificar");
+                    int idUpdate = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.println("Introduzca nuevo modelo:");
+                    String modeloC = scanner.nextLine();
+                    System.out.println("Introduzca el número de plazas:");
+                    int plazasC= scanner.nextInt();
+                    Coche cocheUpdate = new Coche(idUpdate,modeloC, plazasC);
+                    cocheDAO.updateCoche(cocheUpdate);
+                    System.out.println("Modificacion realizada correctamente.");
+
                     break;
                 case 5:
                     System.out.println(cocheDAO.listadoCoches());
