@@ -66,6 +66,9 @@ public class Main {
                     cocheDAO.creaCoche(nuevoCoche);
                     System.out.println("Coche añadido correctamente.");
                     break;
+                case 5:
+                    System.out.println(cocheDAO.listadoCoches());
+                    break;
                 case 6:
                     return;
                 default:
